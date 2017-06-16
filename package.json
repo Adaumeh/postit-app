@@ -1,7 +1,7 @@
 {
   "name": "postit-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "app for messaging",
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon ./bin/www",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/Adaumeh/postit-app.git"
   },
-  "author": "",
+  "author": "Umeononihu Adaobi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Adaumeh/postit-app/issues"
