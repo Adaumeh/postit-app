@@ -1,0 +1,18 @@
+body{
+
+}
+.createuser {
+height:300px; 
+width:300px;
+border-radius:10px;
+font-family:raleway;
+border:2px solid #ccc;
+padding:30px 40px 25px;
+margin-left:300px;
+margin-top: 0px;
+color:white;
+background:#800080;
+}
+.clear{
+
+}
