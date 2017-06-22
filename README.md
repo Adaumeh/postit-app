@@ -67,5 +67,6 @@ Copyright adaumeh 2017 alrights reserved
 
 
 [![Build Status](https://travis-ci.org/Adaumeh/postit-app.svg?branch=master)](https://travis-ci.org/Adaumeh/postit-app)
+[![Coverage Status](https://coveralls.io/repos/github/Adaumeh/postit-app/badge.svg?branch=master)](https://coveralls.io/github/Adaumeh/postit-app?branch=master)
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate"><img src="https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg" /></a>
