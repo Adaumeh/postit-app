@@ -5,15 +5,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    msg_group: {
+    text:{
       type: DataTypes.STRING,
       allowNull: false,
     },
-    TEXT:{
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    GROUP: {
+    group: {
       type: DataTypes.STRING,
       allowNull: false,
     },

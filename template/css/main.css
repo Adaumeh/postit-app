@@ -1,10 +1,14 @@
-
+body{
+    background-image: url('../img/img.jpg');
+     background-repeat : no-repeat;
+      background-size : 1000px 900px
+}
 #header{
-	background: #800080;
+	background: ;
 	width: 100%;
 	margin-top: 0px;
-	height: 80px;
-	float:left;
+	height: 1z0px;
+	float:right;
 	color:white;
 	margin-left:none;
     margin-bottom: 20px;
@@ -31,6 +35,9 @@ border:2px solid #ccc;
 padding:10px 40px 25px;
 margin-left:300px;
 margin-top: 0px;
+text-align: center;
+color:white;
+background:#800080
 
 }
 .clear{

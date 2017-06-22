@@ -1,4 +1,4 @@
-const user = require('../models').user;
+const usercontroller = require('../models').user;
 
 module.exports = {
   create(req, res) {
@@ -16,7 +16,7 @@ module.exports = {
       }
       else
       { 
-    return user
+    return usercontroller
       .create({
         name: req.body.name,
         password: req.body.password,
@@ -25,7 +25,7 @@ module.exports = {
         phone: req.body.phone
       })
 
-      .then(user => res.status(201).send(user))
+      .then(user => res.status(200).send(user))
       .catch(error => res.status(400).send(error));
 }
   },

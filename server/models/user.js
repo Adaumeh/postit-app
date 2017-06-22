@@ -24,13 +24,13 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     classMethods: {
-      // associate: (models) => {
-      //   user.hasMany(models.message, {
-      //     foreignKey: 'id',
-      //     as: 'userid',
-      //     onDelete: 'CASCADE',
-      //   });
-      // },
+       associate: (models) => {
+         user.hasMany(models.message, {
+          foreignKey: 'id',
+          as: 'userid',
+          onDelete: 'CASCADE',
+        });
+       },
     },
   });
   return user;
