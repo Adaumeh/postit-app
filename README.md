@@ -63,5 +63,6 @@ Copyright adaumeh 2017 alrights reserved
 *Acknowledgments*
 -my acknowledgment goes to  Andela for creating this wondreful 
 -learning environment, my facilitators and my co bootcampers for -all their contribution.
+[![Build Status](https://travis-ci.org/Adaumeh/postit-app.svg?branch=master)](https://travis-ci.org/Adaumeh/postit-app)
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate"><img src="https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg" /></a>
