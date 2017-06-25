@@ -16,15 +16,16 @@ module.exports = {
         type: Sequelize.BIGINT
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        isEmail:true
       },
       password: {
-        type: Sequelize.STRING,
-        unique:true
+        type: Sequelize.CHAR,
+        unique:false
       },
 
       confirmpassword: {
-        type: Sequelize.STRING
+        type: Sequelize.CHAR,
       },
       userid: {
         type: Sequelize.STRING

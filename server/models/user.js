@@ -1,4 +1,4 @@
-
+const validator = require('validator');
 module.exports = (sequelize, DataTypes) => {
   const user = sequelize.define('user', {
     name: {
@@ -13,16 +13,20 @@ module.exports = (sequelize, DataTypes) => {
     email:{
       type: DataTypes.STRING,
       allowNull: false,
+      validate:  {
+      isEmail: true
+    }
     },
     password: {
-      type: DataTypes.STRING,
+      type: DataTypes.CHAR,
       allowNull: false,
     },
     confirmpassword: {
-      type: DataTypes.STRING,
+      type: DataTypes.CHAR,
       allowNull: false,
     },
   }, {
+
     classMethods: {
        associate: (models) => {
          user.hasMany(models.message, {
@@ -33,5 +37,6 @@ module.exports = (sequelize, DataTypes) => {
        },
     },
   });
+  
   return user;
 };

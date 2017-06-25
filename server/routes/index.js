@@ -15,7 +15,7 @@ module.exports = (app) => {
   app.post('/api/group/id/adduser', adduser.create);
   app.post('/api/group/id/messages', messages.create);
   app.post('/api/user/signin', login.findUser);
-  app.get('/api/group/id/messages', getmessages.list);
+  app.get('/api/group/:id/messages', getmessages.list);
 
   
 };

@@ -24,7 +24,7 @@ const user = require('../models').user;
             token
           });
         } else {
-          res.status(401).send({ success: false, message: 'Invalid username or password.' });
+          res.status(400).send({ success: false, message: 'Invalid username or password.' });
         }
       }
     });
