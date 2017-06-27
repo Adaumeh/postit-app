@@ -1,0 +1,21 @@
+{
+  "name": "postit-app",
+  "description": "post it app is a broadcast messaging app",
+  "scripts": {
+  },
+  "env": {
+    "undefined": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
