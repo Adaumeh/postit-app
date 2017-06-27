@@ -26,7 +26,7 @@ module.exports = {
       else if (!req.body.email ){
         res.json({message:"Email is required"}).status(400);
       }else  if(req.body.isEmail){
-        res.json({message:"Invalid email"})
+        res.json({message:"Invalid email"}).status(400)
       }
       else if (!req.body.password ){
         res.json({message:"Password is required"}).status(400);
@@ -34,7 +34,7 @@ module.exports = {
         res.json({message:"confirmpassword is required"}).status(400);
       }
       else if (req.body.password != req.body.confirmpassword){
-        res.json({message:"Please ensure the Password match"})
+        res.json({message:"Please ensure the Password match"}).status(400)
       }
     return usercontroller
       .create({

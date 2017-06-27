@@ -1,4 +1,16 @@
 const express = require('express');
+console.log('test');
+
+const app = express();
+
+app.get('/', function(req, res){
+    res.send("Hello world from Express!!");
+});
+
+app.listen(3000, function(){
+    console.log('Example app listening on port 3000');
+
+/*const express = require('express');
 
 const app = express();
 // tell the app to look for static files in these directories
