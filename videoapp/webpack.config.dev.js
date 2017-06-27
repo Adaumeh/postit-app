@@ -1,15 +1,22 @@
 import path from 'path'
-
+import webpack from 'webpack'
 
  export default {
-  devtools: "eval-source-map",
+  //devtools: "eval-source-map",
   // the entry file for the bundle
-  entry: {path.join(__dirname, '/client/main.js'),
+  entry: ['Webpack-hot-middleware/client',
+  path.join(__dirname, '/client/main.js'),
 
-  // the bundle file we will get in the result
+ ], // the bundle file we will get in the result
   output: {
-    path: '/'
+    path: '/',
+    publicPath: '/'
   },
+  plugins:[
+  new webpack.NoEmitOnErrorsPlugin(),
+  new webpack.optimize.OccurrenceOrderPlugin(),
+     new webpack.HotModuleReplacementPlugin()
+  ],
 
   module: {
 
@@ -17,11 +24,11 @@ import path from 'path'
     loaders: [{
       test: /\.js$/,
       include: path.join(__dirname, 'client'),
-      loaders: ['babel']
+      loaders: ['react-hot-loader','babel-loader']
     }],
   },
   resolve: {
-    extensions:['','.js']
+    extensions:['.json','.js']
   },
 
   // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes
