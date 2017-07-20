@@ -1,11 +1,16 @@
 const express = require('express');
 const logger = require('morgan');
+const jwt = require('jsonwebtoken');
+const secret= "drtguug8*werty+uifghyu"
+
 const bodyParser = require('body-parser');
-//const jwt = require('jsonwebtoken');
+
 //const bcrypt = require('bcrypt');
 // Set up the express app
 const app = express();
 // Log requests to the console.
+
+app.set('superSecret', secret)
 app.use(logger('dev'));
 
 // Parse incoming requests data (https://github.com/expressjs/body-parser)

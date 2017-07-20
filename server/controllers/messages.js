@@ -18,8 +18,9 @@ module.exports = {
         title: req.body.title,
         text: req.body.text,
         group: req.body.group,
-      })
 
+      })
+      
       .then(messages => res.status(200).send(messages))
       .catch(error => res.status(400).send(error));
 }

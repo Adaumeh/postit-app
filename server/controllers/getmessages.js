@@ -8,10 +8,10 @@ module.exports = {
       else
       {
         return messages
-
-        .all()
-        .then(messages => res.status(200).send(succesfull))
-        .catch(error => res.status(400).send(error));
+         .findById(req.params.id)
+        .then(messages => res.status(200).send(messages))
+        .catch(error => res.status(400).send(error.toString()));
       }
 }
   }
+  

@@ -10,15 +10,26 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        unique:true
+        unique:true,
+        msg: "name must be unique"
       },
       phone: {
         type: Sequelize.BIGINT
       },
-      email: {
-        type: Sequelize.STRING,
-        isEmail:true
-      },
+       email: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                len: {
+                    args: [6, 128],
+                    msg: "Email address must be between 6 and 128 characters in length"
+                },
+                isEmail: {
+                    msg: "Email address must be valid"
+                }
+            }
+        },
       password: {
         type: Sequelize.CHAR,
         unique:false

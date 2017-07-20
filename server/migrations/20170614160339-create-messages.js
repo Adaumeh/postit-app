@@ -25,6 +25,14 @@ module.exports = {
         type: Sequelize.DATE
       },
       }),
+    classMethods: {
+      associate: (models) => {
+        messages.belongsTo(models.group, {
+          foreignKey: 'id',
+          onDelete: 'CASCADE',
+        });
+      },
+    },
     
     
   down: (queryInterface /* , Sequelize */) =>

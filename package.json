@@ -13,15 +13,21 @@
     "url": "https://github.com/Adaumeh/postit-app/issues"
   },
   "scripts": {
-  "start:dev": "nodemon ./bin/www",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
-  "homepage": "https://github.com/Adaumeh/postit-app#readme",
+    "start:dev": "nodemon ./bin/www",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node app.js",
+    "client": "server/index.js"
+  },
+  "homepage": "https://github.co-devit-app#readme",
   "dependencies": {
     "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
+    "bookshelf": "^0.10.3",
     "express": "^4.15.3",
     "jsonwebtoken": "^7.4.1",
+    "jwt-decode": "^2.2.0",
+    "knex": "^0.13.0",
     "material-ui": "^0.18.3",
     "morgan": "^1.8.2",
     "pg": "^6.2.4",
@@ -31,6 +37,7 @@
     "react-router": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
     "sequelize": "^4.1.0",
+    "shortid": "^2.2.8",
     "validator": "^7.1.0"
   },
   "devDependencies": {

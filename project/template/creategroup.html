@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>WELCOME </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300|Yantramanav:900" rel="stylesheet">
+<link href="css/create.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<link rel="stylesheet" href="asset/css/materialize.min.css">
+
+</head>
+<body>
+	<div class="card-panel teal lighten-2 text-white center"><h2>CREATE YOUR MESSAGE GROUP</h2>
+<div class = createuser>
+<form name="message" method="post" action="">
+<H4>GROUP DETAILS</H4><br></br>
+GROUP_NAME:<textarea rows="" cols="" name="name" id="textarea1"></textarea><br></br>
+ADMIN:<textarea rows="" cols="" name="name" id="textarea1"></textarea><br>
+</br>
+<br></br>
+<label>SELECT MEMBERS</label>
+  <select class="browser-default text-teal">
+    <option value=""  selected>Choose your option</option>
+    <option value="1">gold</option>
+    <option value="2">ewa</option>
+    <option value="3">labake</option>
+    <option value="1">ada</option>
+    <option value="2">Zainab</option>
+    <option value="3">Anjola</option>
+  </select>
+  <br></br>
+    <button class="btn waves-effect waves-light btn-small text-white" type="submit" name="action">Submit
+    <i class="material-icons right">send</i></button>   <a href="message.html"class="btn waves-effect btn-small text-white pink">MESSAGE</button></a><br></br><a class="btn-floating btn-large waves-effect waves-light pink"><i class="material-icons">add</i></a><a class="btn-floating btn-large waves-effect waves-light pink"><i class="material-icons">sub</i></a>
+
+
+  </button>
+  </div>
+
+  </div>
+</form>
+
+
+</div>
+	</div>
+	
+	
+
+
+<script src="asset/css/material.min.js"></script>
+<script>
+ $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+<script>
+
+  $('#textarea1').val('New Text');
+  $('#textarea1').trigger('autoresize');
+</script>
+</body>
