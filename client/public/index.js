@@ -9,7 +9,7 @@ import user  from './routes/index';
 import login from './routes/index');
 import group from './routes/index');
 import messages from './routes/index');
-
+import getmessages from './routes/index';
 
 const app = express();
 
@@ -18,6 +18,8 @@ app.use('/api/user/signup', user.create);
 app.use('/api/user/signin',login.findUser);
 app.use('/api/group/creategroup', group.create);
 app.use('/api/group/id/messages', messages.create);
+app.use('/api/group/:id/messages', getmessages.list);
+
 const compiler = webpack(webpackConfig);
 
 app.use(webpackMiddleware(webpack(webpackConfig)));

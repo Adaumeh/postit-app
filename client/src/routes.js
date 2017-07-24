@@ -13,8 +13,11 @@ import SignUpPage from './components/signup/SignUpPage';
 import flashMessagesList from './components/flash/flashMessagesList'
 import LoginPage from './components/login/LoginPage';
 import LoginForm from './components/login/LoginForm';
+import requireAuth from './utils/requireAuth';
 import NewEventPage from './components/events/NewEventPage';
 import NewPostPage from './components/messages/NewPostPage';
+import NoticeBoardPage from './components/noticeboard/NoticeBoardPage';
+
 
 
 export default(
@@ -27,7 +30,9 @@ export default(
   <Route path="/user/signup/form" component={SignUpForm} />
   <Route path="/user/login" component={LoginPage} /> 
    <Route path="/user/login/form" component={LoginForm} />
-   <Route path="user/group" component={NewEventPage} />
-<Route path="user/group/messages" component={NewPostPage} />
+   <Route path="user/group" component={requireAuth(NewEventPage)} />
+ <Route path="user/group/id/messages" component={requireAuth(NewPostPage)} />
+ <Route path="user/group/:id/messages" component={requireAuth(NoticeBoardPage)}  />
+
 </Route>
 )

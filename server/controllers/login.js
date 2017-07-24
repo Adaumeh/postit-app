@@ -13,8 +13,8 @@ const salt = bcrypt.genSaltSync(saltRounds);
 const jwt = require("jsonwebtoken"); 
 
 const secret = "drtguug8*werty+uifghyu"
-const password = req.body.password;
-const confirmpassword = req.body.confirmpassword;
+const password = 's0/\/\P4$$w0rD';
+const confirmpassword = 's0/\/\P4$$w0rD';
 const hash = bcrypt.hashSync(password, saltRounds);
 
 //const login = require('../controllers/user');
@@ -33,7 +33,7 @@ const hash = bcrypt.hashSync(password, saltRounds);
         res.status(401).send({ success: false, message: 'Invalid credentials' });
  
       } else if(user){
-        if (bcrypt.compareSync(user.password,req.body.password)) {
+        if (bcrypt.compareSync(req.body.password,user.password)) {
         res.json({ success: false, message: 'Authentication failed.' });
       } else {
 

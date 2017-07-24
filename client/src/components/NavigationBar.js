@@ -15,10 +15,9 @@ render(){
 const {isAuthenticated} = this.props.auth;
 const userLinks = (
 <ul className = "nav navbar-nav navbar-right">
-<li> <Link to="/user/group"> create</Link></li>
-<li> <Link to="/user/group/:id/messages"> view</Link></li>
-<li> <Link to="/user/group/id/messages"> send</Link></li>
-<li> <Link to="/user/group/adduser"> adduser</Link></li>
+<li> <Link to="/user/group"> create-group</Link></li>
+<li> <Link to="/user/group/id/messages"> Post</Link></li>
+<li> <Link to="/user/group/:id/messages"> View-notice</Link></li>
 <li> <a href="#" onClick={this.logout.bind(this)}>Logout</a></li>
 </ul>
 

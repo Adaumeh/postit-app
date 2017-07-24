@@ -1,12 +1,13 @@
-import jwt from 'jsonwebtoken';
-import user from '../models/user';
+const jwt = require('jsonwebtoken');
 const secret = "drtguug8*werty+uifghyu";
+const user = require ('../models/user');
+
  
-export default (req,res,next) => {
-	const authorizationHeader = req.headers['authorization'];
+function authenticate(req,res,next){
+	const authorizationHeader = req.headers['Authorization'];
 	let token;
 	if(authorizationHeader){
-		token = authorizationHeader.split('')[1];
+		token = authorizationHeader.split('')[2];
 	}
 	if(token){
 jwt.verify(token,secret,(err,decoded) =>{
@@ -16,14 +17,17 @@ if(err){
 	new user({id:decoded.id}).fetch().then(user =>{
 if(!user){
 	res.status(404).json({error:'No such user'});
-}else{
+}else if(user){
 req.userId = decoded;
 next();
 }
-});
-	}else{
+else{
 		res.status(403).json({
 			errors: 'No token provided'
 		});
 	}
+});
+}
+});
+}
 }

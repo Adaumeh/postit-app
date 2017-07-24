@@ -9,4 +9,6 @@ class Greetings extends React.Component {
 		);
 }
 }
+
+
 	export default Greetings;

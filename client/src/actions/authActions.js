@@ -38,3 +38,4 @@ export function  createEvent(event){
 		return axios.post('api/group/creategroup',event)
 	}
 }
+

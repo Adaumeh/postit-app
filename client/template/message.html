@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>WELCOME </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:300|Yantramanav:900" rel="stylesheet">
+<link href="css/create.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<link rel="stylesheet" href="asset/css/materialize.min.css">
+
+</head>
+<body>
+	<div class="card-panel teal lighten-2 white-text center"><h2>SEND YOUR NOTICE</h2>
+<div class = createuser>
+<form name="message" method="post" action="">
+<H4>NOTICE</H4>
+TITLE:<textarea rows="" cols="" name="name" id="textarea1"></textarea><br></br>
+<br></br>
+TEXT:<textarea rows="" cols="" name="name" id="textarea1"></textarea><br>
+</br>
+<br></br>
+<label>SELECT GROUP</label>
+  <select class="browser-default text-teal">
+    <option value=""  selected>Choose your option</option>
+    <option value="1">Bootcamp23</option>
+    <option value="2">Fellows</option>
+    <option value="3">Andela LOS</option>
+    <option value="1">Applicants</option>
+    <option value="2">Admin</option>
+    <option value="3">Cateres</option>
+  </select><br></br>
+  <br></br>
+
+
+    
+    <a href="noticeboard.html" class="btn waves-effect btn-large text-white pink">SEND</button></a>
+  </div>
+
+  </div>
+</form>
+
+
+</div>
+	</div>
+	
+	
+
+
+<script src="asset/css/material.min.js"></script>
+<script>
+ $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+<script>
+
+  $('#textarea1').val('New Text');
+  $('#textarea1').trigger('autoresize');
+</script>
+</body>

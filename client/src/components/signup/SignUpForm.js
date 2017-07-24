@@ -1,9 +1,37 @@
 import  React from 'react';
+import Validator from 'validator';
+import isEmpty from 'lodash'
 import classnames from 'classnames';
+import TextFieldGroup from '../common/TextFieldGroup';
 
-//import validateInput from './shared/validations/signup'
-//import TextFieldGroup from '../common/TextFieldGroup';
+
+function validateInput(data){
+const errors = {};
+
+  if(Validator.isEmpty(data.name)){
+    errors.name='name field is required';
+  }
+  if(Validator.isEmpty(data.email)){
+    errors.email ='email field is required';
+  }
+  if(Validator.isEmpty(data.password)){
+    errors.password=' password field is required';
+  }
+  if(Validator.isEmpty(data.confirmpassword)){
+    errors.confirmpassword=' This field is required';
+  }
+  return{
+    errors,
+    isValid: isEmpty(errors)
+
+  }
+}
+
+
 class SignUpForm extends React.Component{
+
+
+
 constructor(props){
 	super(props);
 	this.state={
@@ -18,14 +46,36 @@ constructor(props){
 	this.onChange = this.onChange.bind(this);
 	this.onSubmit = this.onSubmit.bind(this);
 }
+isValid(){
+const{errors,isValid} = validateInput(this.state);
+if(!isValid){
+	this.setState({errors});
+}
+return isValid;
+}
+checkUserExist(e) {
+	const field = e.target.name;
+	const val = e.target.value;
+	if(val !== '') {
+		this.props.isUserExists(val).then(res =>{
+			let errors = this.state.errors;
+			let invalid;
+			if(res.data.user){
+				errors[field] = 'There is a user with such' + field;
+				invalid = true;
+			}
+			this.setState({errors,invalid});
+		});
+	}
+}
+
 onChange(e){
 	this.setState({[e.target.name]:e.target.value});
 }
-
 onSubmit(e){
 	
 	e.preventDefault();
-	
+	 if(this.isValid()){
 	this.setState({errors: {},isLoading:true });
 	this.props.userSignupRequest(this.state).then(
 		() => {
@@ -33,10 +83,11 @@ onSubmit(e){
 				type:'success',
 				text: 'You signed up successfully. welcome!'
 			});
-			this.context.router.push('/');
+			this.context.router.push('/user');
 		},
 		({data}) => this.setState({errors:data,isLoading:false})
 		);
+}
 }
 
 	render(){
@@ -119,6 +170,8 @@ sign up
 );
 }
 }
+
+
 
 SignUpForm.PropTypes = {
   userSignupRequest: React.PropTypes.func.isRequired,

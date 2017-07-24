@@ -1,6 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
+import TextFieldGroup from '../common/TextFieldGroup';
 import {connect} from 'react-redux';
+import {validateInput} from '../../shared/validations/group'
 import {createEvent} from '../../actions/eventActions';
 
 class EventForm extends React.Component {
@@ -16,12 +18,27 @@ class EventForm extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
   }
+isValid(){
+  const {errors,isValid} = validateInput(this.state);
+  if(!isValid){
+    this.setState({errors});
+  }
+  return isValid;
+}
+
+
   onChange(e){
     this.setState({[e.target.name]: e.target.value});
   }
   onSubmit(e){
     e.preventDefault();
-    this.props.createEvent(this.state);
+    if(this.isValid()){
+  this.setState({errors: {},isLoading:true });
+  this.props.createEvent(this.state).then(
+    (res) =>this.context.router.push('/'),
+    (err) => this.setState({errors:err.response.data.errors,isLoading:false})
+    );
+}
 }
   render(){
     const {group_name,admin, members, errors,isLoading} = this.state;
@@ -74,6 +91,8 @@ className="form-control"/>
 EventForm.propTypes={
 createEvent:React.PropTypes.func.isRequired
 }
-
+EventForm.contextTypes = {
+  router:React.PropTypes.object.isRequired
+}
 export default connect(null, {createEvent})(EventForm);
 
