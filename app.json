@@ -1,14 +1,15 @@
+
 {
-  "name": "postit-app",
-  "description": "post it app is a broadcast messaging app",
-  "scripts": {
+  "name": "postit-app-ada",
+  "version": "0.2.6",
+  "engines": {
+    "node": "6.10.2"  
+    },
+  "dependencies": {
+    "ejs": "2.5.6",
+    "express": "4.15.2"
   },
-  "env": {
-    "undefined": {
-      "required": true
-    }
-  },
-  "formation": {
+"formation": {
   },
   "addons": [
 
@@ -18,4 +19,6 @@
       "url": "heroku/nodejs"
     }
   ]
+}
+
 }
