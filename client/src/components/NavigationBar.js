@@ -16,6 +16,8 @@ const {isAuthenticated} = this.props.auth;
 const userLinks = (
 <ul className = "nav navbar-nav navbar-right">
 <li> <Link to="/user/group"> create-group</Link></li>
+<li> <Link to="/user/groups"> groups</Link></li>
+
 <li> <Link to="/user/group/id/messages"> Post</Link></li>
 <li> <Link to="/user/group/:id/messages"> View-notice</Link></li>
 <li> <a href="#" onClick={this.logout.bind(this)}>Logout</a></li>
@@ -36,6 +38,7 @@ const guestLinks = (
  
 <div className = "container-fluid">
 <div className = "nav-header">
+
 <Link to="/" className="navbar-brand">Post it</Link>
  
  </div>

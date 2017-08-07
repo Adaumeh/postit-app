@@ -44,7 +44,7 @@ app.post('/api/user/signup', user.create);
   app.post('/api/group/id/adduser', adduser.create);
   app.post('/api/group/id/messages', messages.create);
   
-  app.get('/api/group/:id/messages', getmessages.list);
+  app.get('/api/group/:id/messages', getmessages.retrieve);
 
   });
 };

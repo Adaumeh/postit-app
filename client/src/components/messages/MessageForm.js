@@ -1,11 +1,11 @@
 import React from 'react';
-import classnames from 'classnames';
+//import classnames from 'classnames';
 import {connect} from 'react-redux';
-import {validateInput} from '../../shared/validations/post'
+//import {validateInput} from '../../shared/validations/post'
 
 import {messageEvent} from '../../actions/messageActions';
 
-class PostNewForm extends React.Component {
+class MessageForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -93,9 +93,6 @@ className="form-control"/>
 }
 PostNewForm.propTypes={
 messageEvent:React.PropTypes.func.isRequired
-}
-PostNewForm.contextTypes = {
-  router:React.PropTypes.object.isRequired
 }
 
 export default connect(null, {messageEvent})(PostNewForm);

@@ -15,6 +15,7 @@ import LoginPage from './components/login/LoginPage';
 import LoginForm from './components/login/LoginForm';
 import requireAuth from './utils/requireAuth';
 import NewEventPage from './components/events/NewEventPage';
+import GroupPage from './components/events/GroupPage';
 import NewPostPage from './components/messages/NewPostPage';
 import NoticeBoardPage from './components/noticeboard/NoticeBoardPage';
 
@@ -31,6 +32,8 @@ export default(
   <Route path="/user/login" component={LoginPage} /> 
    <Route path="/user/login/form" component={LoginForm} />
    <Route path="user/group" component={requireAuth(NewEventPage)} />
+ <Route path="user/groups" component={requireAuth(GroupPage)} />
+
  <Route path="user/group/id/messages" component={requireAuth(NewPostPage)} />
  <Route path="user/group/:id/messages" component={requireAuth(NoticeBoardPage)}  />
 

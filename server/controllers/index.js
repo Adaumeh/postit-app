@@ -10,6 +10,6 @@ module.exports = {
   messages,
   adduser,
   login,
-  getmessages,
+  getmessages
   
 };

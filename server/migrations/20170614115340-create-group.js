@@ -25,6 +25,14 @@ module.exports = {
         type: Sequelize.DATE
       },
       }),
+     classMethods: {
+      associate: (models) => {
+        group.hasMany(models.messages, {
+          foreignKey: 'id',
+          onDelete: 'CASCADE',
+        });
+      },
+    },
     
   down: (queryInterface /* , Sequelize */) =>
     queryInterface.dropTable('groups'),

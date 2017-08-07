@@ -68,7 +68,7 @@ module.exports = {
       })
 
       .then(user => res.status(200).send('user successfully created'))
-      .catch(error => res.status(401).send(error));
+      .catch(error => res.status(400).send(error));
 }
 }
 
